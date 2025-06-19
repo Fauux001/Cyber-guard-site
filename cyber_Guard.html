@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Кибер Гвард</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            background-color: #000000;
+            background-image: url('background.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: 70%;
+            color: #ffffff;
+            text-align: center;
+            padding-top: 20vh;
+            transition: background 1s ease;
+        }
+
+        h1 {
+            font-size: 3em;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 5px #000000;
+        }
+
+        p {
+            font-size: 1.2em;
+            text-shadow: 1px 1px 3px #000000;
+        }
+
+        #welcome-screen {
+            animation: fadeOut 5s forwards;
+            animation-delay: 3s;
+        }
+
+        #main-menu {
+            display: none;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        #main-menu.hidden {
+            visibility: hidden;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.5em;
+            transition: color 0.3s;
+            text-shadow: 1px 1px 3px #000000;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #00ffcc;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome-screen">
+        <h1>КИБЕР ГВАРД</h1>
+        <p>
+            Приветствуем вас на сайте, посвящённом Кибер Гвард.<br />
+            Если у вас есть какие-либо проблемы — вы пришли по адресу.
+        </p>
+    </div>
+
+    <div id="main-menu" class="hidden">
+        <h2>Навигация КГ</h2>
+        <ul>
+            <li><a href="cyber_guard.html">Главная</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+        </ul>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('welcome-screen').style.display = 'none';
+            const menu = document.getElementById('main-menu');
+            menu.classList.remove('hidden');
+            menu.style.display = 'block';
+        }, 5000);
+    </script>
+</body>
+</html>
